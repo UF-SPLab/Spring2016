@@ -1,4 +1,17 @@
+library("dplyr")
+library("ggplot2")
+library("tidyr")
 
+# Type getwd() to find address of project folder 
+#    paste location as string for path
+# example: f_path<-"/Users/R/Documents/Teaching/Spring2016/SensLab/CogLabs/"
+
+# filename string
+# if f_csv<-"SignalDetection/SigDet.csv"
+# data_d<-read.csv(file= paste0(f_path,f_csv),header = T,stringsAsFactors=F)
+
+data_set <- read.csv(file="class_vis_search.csv", header = TRUE, stringsAsFactors = FALSE)
+vis_search<-as.tbl(select(data_set))
 
 vis_search_subj <- vis_search %>% 
   unite(Distractor_Target, Distractor.type,Target) %>% 
