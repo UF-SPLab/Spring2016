@@ -10,9 +10,10 @@ library("tidyr")
 # if f_csv<-"SignalDetection/SigDet.csv"
 # data_d<-read.csv(file= paste0(f_path,f_csv),header = T,stringsAsFactors=F)
 
-data_d<-read.csv(file="class_simple_det.csv", header = T,stringsAsFactors=F)
+data_set <- read.csv(file = "class_simple_det.csv", header = TRUE, stringsAsFactors = FALSE)
+vis_search <- as.tbl(data_set)
 
-vis_search_subj<-vis_search %>% unite(Distractor_Target, Distractor.type,Target) %>% 
+vis_search_subj <- vis_search %>% unite(Distractor_Target, Distractor.type,Target) %>% 
   group_by(Distractor_Target,Number.of.distractors,randGator) %>% tally(mean(RT..ms.))
 
 ggplot(vis_search_subj,aes(x=Number.of.distractors,y=n))+
