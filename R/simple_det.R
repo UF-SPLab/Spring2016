@@ -11,7 +11,7 @@ library("tidyr")
 # data_d<-read.csv(file= paste0(f_path,f_csv),header = T,stringsAsFactors=F)
 
 data_set <- read.csv(file = "class_simple_det.csv", header = TRUE, stringsAsFactors = FALSE)
-vis_search <- as.tbl(data_set)
+simple_det <- as.tbl(data_set)
 
 ggplot(simple_det,aes(x=Trial,y=RT..ms.))+
   geom_smooth(se = T, method = "loess",span = 0.3)+
