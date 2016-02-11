@@ -10,7 +10,8 @@ library("tidyr")
 # if f_csv<-"SignalDetection/SigDet.csv"
 # data_d<-read.csv(file= paste0(f_path,f_csv),header = T,stringsAsFactors=F)
 
-data_set <- read.csv(file="class_vis_search.csv", header = TRUE, stringsAsFactors = FALSE)
+fn<-file.choose()
+data_set <- read.csv(file = fn, header = TRUE, stringsAsFactors = FALSE)
 vis_search<-as.tbl(data_set)
 
 vis_search_subj <- vis_search %>% 
