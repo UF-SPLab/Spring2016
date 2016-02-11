@@ -10,7 +10,8 @@ library("tidyr")
 # if f_csv<-"SignalDetection/SigDet.csv"
 # data_d<-read.csv(file= paste0(f_path,f_csv),header = T,stringsAsFactors=F)
 
-data_set <- read.csv(file = "class_simple_det.csv", header = TRUE, stringsAsFactors = FALSE)
+fn <- file.choose()
+data_set <- read.csv(file = fn, header = TRUE, stringsAsFactors = FALSE)
 simple_det <- as.tbl(data_set)
 
 ggplot(simple_det,aes(x=Trial,y=RT..ms.))+
