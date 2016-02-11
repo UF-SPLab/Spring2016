@@ -8,7 +8,8 @@ library("tidyr")
 # f_csv<-"SignalDetection/SigDet.csv"  # filename string
 # data_set<-read.csv(file= paste0(f_path,f_csv), header = TRUE, stringsAsFactors = FALSE)
 
-data_set <- read.csv(file = "class_blind_spot.csv", header = TRUE, stringsAsFactors = FALSE)
+fn<-file.choose()
+data_set <- read.csv(file = fn, header = TRUE, stringsAsFactors = FALSE)
 blind_spot <- as.tbl(data_set)
 
 # Tidy up data set for plotting
